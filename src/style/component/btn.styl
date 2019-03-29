@@ -1,0 +1,21 @@
+@import "../util/*"
+
+btn($theme)
+  &.pri
+    background: $theme.pri
+    color: $text-color($theme, $theme.pri)
+
+$theme(btn, 'btn')
+
+.btn
+  $no-select()
+  outline none
+  border-style none
+  display inline-flex
+  flex 0 0 auto
+  align-items center
+  justify-content center
+  position relative
+  text-decoration: none
+
+  $br-pill()
