@@ -1,0 +1,25 @@
+
+.home
+  &-main
+    width: 100%
+    max-width: 1024px
+    p(x, 4)
+    m(x, auto)
+    box-sizing border-box
+
+    h1
+      text-align center
+
+  &-desc
+    color: $light.text-d
+    font-size: 32px
+    font-weight 700
+    line-height 1.5
+    text-align left
+    p(x, 4)
+    m(y, 10)
+
+    @media $media-breakpoints[sm-and-down]
+     font-size:21px
+     p(x, 0)
+     m(y, 4)

@@ -3,12 +3,12 @@
 btn($theme)
   &.pri
     background: $theme.pri
-    color: $text-color($theme, $theme.pri)
+    color: text-color($theme, $theme.pri)
 
-$theme(btn, 'btn')
+theme(btn, 'btn')
 
 .btn
-  $no-select()
+  no-select()
   outline none
   border-style none
   display inline-flex
@@ -16,6 +16,9 @@ $theme(btn, 'btn')
   align-items center
   justify-content center
   position relative
-  text-decoration: none
-
-  $br-pill()
+  text-decoration none
+  font-weight bolder
+  br-pill()
+  p(x, 3)
+  height 48px;
+  font-size:24px;

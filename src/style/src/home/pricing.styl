@@ -1,0 +1,56 @@
+.pricing
+  m(y, 10)
+
+  &-cont
+    display: flex
+    flex-direction row
+    justify-content space-around
+
+  &-tile
+    flex: 1
+    max-width 320px
+    min-width 280px
+    text-align center
+    p(a,3)
+    m(y,4)
+    br(8px)
+    shadow(1)
+    transition: 0.2s ease-in-out
+
+    &:hover
+      transform scale(1.04)
+
+    &-premium
+      background: $light.pale
+
+
+    .price
+      height: 60px
+      m(y, 2)
+      font-size:16px
+      font-weight 700
+
+    .price-num
+      display: inline
+      font-size:48px
+      font-weight 900
+
+      &:before
+        content:'$'
+        font-size: 16px
+        vertical-align: super;
+
+      &:after
+        content:'/mon'
+        font-size: 16px
+
+    .items
+      height 160px
+
+@media $media-breakpoints[xs]
+  .pricing
+    m(y, 6)
+
+    &-cont
+      flex-direction column
+      align-items: center

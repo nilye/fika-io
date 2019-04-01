@@ -1,0 +1,33 @@
+
+.feature
+  display flex
+  flex-direction row
+  justify-content space-around
+  m(y, 9)
+
+  &-tile
+    flex: 1
+    text-align: center
+    max-width: 400px
+    p(y, 3)
+
+
+  &-desc
+    font-size:16px
+    font-weight 300
+    line-height 1.5
+    height 120px
+
+  &-img
+    height: 280px
+
+    img
+      height 100%
+      br(8px)
+      shadow(1)
+
+@media $media-breakpoints[sm-and-down]
+  .feature
+    flex-direction column
+    align-items center
+    m(y, 0)

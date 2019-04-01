@@ -1,7 +1,5 @@
 <template>
-	<div>
-		<button class="btn">Test</button>
-	</div>
+
 </template>
 
 <script>
@@ -11,4 +9,5 @@
 </script>
 
 <style scoped>
+
 </style>
