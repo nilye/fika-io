@@ -2,6 +2,9 @@
 	<div class="hero">
 
 		<div class="hero-container flex-center">
+			<!--google login-->
+			<button class="btn log-in" @click="login"> Login </button>
+
 			<div class="home-main">
 
 				<div class="d-block flex-x-center">
@@ -25,6 +28,7 @@
 					<img :class="i[1]" :src="require('../../assets/img/hero/'+i[0]+'.png')">
 				</div>
 				<img class="bg" src="../../assets/img/hero-bg.png">
+
 			</div>
 		</div>
 	</div>
@@ -62,6 +66,13 @@
 					if (i.classList[0] !== 'bg'){
 						i.style.transform = `scale(${ratio})`
 					}
+				})
+			},
+			login(){
+				this.$gAuth.signIn().then(GoogleUser =>{
+					console.log(GoogleUser.getId(), GoogleUser.getBasicProfile())
+				}).catch(err=>{
+					console.log(err)
 				})
 			}
 		}
