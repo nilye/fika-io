@@ -2,7 +2,7 @@
   <div>
     <hero></hero>
     <div class="home-main">
-      <div class="home-desc">Navigator, Ads, Popups and horrible layouts always interfere with reading. Fika is a tool which can help you extract the main content from the webpage and present it in a peaceful reading mode.
+      <div class="home-desc">Navigator, Ads, Popups and horrible layouts always interfere with reading. Fika is a tool which can help you extract the main content from the webpage and present it in a peaceful read mode.
       </div>
     </div>
     <comparison></comparison>

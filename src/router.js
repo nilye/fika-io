@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './page/index.vue'
-import Test from './page/test.vue'
+import ShareToUnlock from './page/share-to-unlock.vue'
 
 Vue.use(Router)
 
@@ -10,6 +10,6 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     { path: '/', name: 'home', component: Home },
-    { path: '/test', name: 'test', component: Test }
+    { path: '/sharetounlock', name: 'sharetounlock', component: ShareToUnlock }
   ]
 })

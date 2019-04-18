@@ -22,3 +22,7 @@ theme(btn, 'btn')
   p(x, 3)
   height 48px;
   font-size:24px;
+  &[disabled]
+    opacity 0.4
+    filter: grayscale(1)
+    pointer-events none

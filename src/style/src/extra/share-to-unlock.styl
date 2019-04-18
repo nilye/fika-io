@@ -1,0 +1,29 @@
+.avatar
+  br-circle()
+  height 40px
+  width 40px
+
+.share-to-unlock-dialog
+  shadow(2)
+  height: 480px;
+  width: 640px;
+  br(16px)
+  background #fff;
+  z-index 100
+
+.photo-bg
+  opacity 0.2
+  pointer-events none
+  width: 140vw;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: start;
+  position: fixed;
+  @media screen and (min-width: 1920px)
+    width 120vw
+
+  img
+    height 280px

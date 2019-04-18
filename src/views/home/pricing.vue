@@ -26,7 +26,7 @@
 						{{i}}
 					</div>
 				</div>
-				<button class="btn pri my-2">Subscribe</button>
+				<button class="btn pri my-2" disabled>Coming Soon</button>
 			</div>
 		</div>
 	</div>
