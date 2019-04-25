@@ -1,34 +1,27 @@
-/* comparison */
 .comparison
-  background: $light.sec
-  m(y,10)
+  width 100%
+  max-width 720px
+  m(x, auto)
+  br(16px)
+  background:#fff
+  border-collapse: collapse;
+  border-spacing: 0;
 
-  @media $media-breakpoints[sm-and-down]
-    m(y, 0)
+  thead
+    background: $theme.pale
+    th
+      p(y,3)
+      &:first-child
+        border-radius: 16px 0 0 0
+      &:last-child
+        border-radius: 0 16px 0 0
 
+  td
+  th
+    p(a, 2)
+    text-align center
+    &:first-child
+      text-align: left
 
-  &-cont
-    width 100%;
-    //border: 1px solid $light.text-d
-    br(4px)
-    overflow hidden
-    position relative
-    cursor col-resize
-    shadow(2)
-
-  &-before
-    position absolute
-    height 100%
-    top: 0
-    left 0
-    overflow hidden
-    border-right: 4px solid $light.pri
-    box-sizing border-box
-
-    img
-      display flex
-      height 100%
-
-  &-after
-    display: flex
-    width: 100%
+  tr
+    border-top: 1px solid #eee;

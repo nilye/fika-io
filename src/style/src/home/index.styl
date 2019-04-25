@@ -1,6 +1,6 @@
 
 .home
-  &-main
+  &-col
     width: 100%
     max-width: 1024px
     p(x, 4)
@@ -10,8 +10,17 @@
     h1
       text-align center
 
+    &-small
+      max-width 640px
+
+  &-sec
+    p(t, 7)
+    p(b, 8)
+    h1
+      text-align center
+
   &-desc
-    color: $light.text-d
+    color: $theme.text-d
     font-size: 32px
     font-weight 700
     line-height 1.5

@@ -1,7 +1,7 @@
 <template>
 	<div class="d-flex flex-center" style="height: 100vh">
 		<div class="share-to-unlock-dialog flex-center">
-			<div v-if="!granted" style="text-align: center">
+			<div v-if="granted" style="text-align: center">
 				<check-icon height="96px" width="96px" fill="#28a745" viewBox="0 0 24 24"></check-icon>
 				<h1>Your BETA access is granted!</h1>
 				<p>Fika BETA features should be available to you now.</p>
@@ -36,17 +36,14 @@
 	import CheckIcon from '../assets/svg/check.svg'
 	import FacebookIcon from '../assets/svg/facebook.svg'
 	import Photos from '../util/photos';
-	import FikaIcon from '../assets/svg/fika.svg'
+	import FikaIcon from '../assets/svg/logo.svg'
 
 	export default {
 		name: 'sharetounlock',
 		components:{CheckIcon, FacebookIcon, FikaIcon},
 		data: ()=>({
 			granted: false,
-			user: {
-				"nickname": "Xinzhou Ye",
-				"avatar_url": "https://lh3.googleusercontent.com/-IvSppfPGUEE/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdB3TiE6ywqpTjrxqtciyN2p5HHbQ/mo/photo.jpg",
-			},
+			user: {},
 			photos: Photos
 		}),
 		created(){
@@ -58,8 +55,6 @@
 				js.src = "https://connect.facebook.net/en_US/sdk.js"
 				fjs.parentNode.insertBefore(js, fjs);
 			})(document, 'script', 'facebook-sdk' )
-			let that = this,
-				token = this.$route.query['t']
 			window.fbAsyncInit = function () {
 				FB.init({
 					appId: 393950891439557,
@@ -68,6 +63,7 @@
 					version: 'v3.2'
 				})
 			}
+			this.getUserInfo()
 		},
 		methods:{
 			fbDialog(){
@@ -81,6 +77,15 @@
 					}
 				})
 			},
+			getUserInfo(){
+				let token = this.$route.query['t']
+				this.axios.get('/user/info?token='+token).then(res=>{
+					if (res.data.code === 0 && res.data.data.user_type === 'beta'){
+						this.granted = true
+						this.user = res.data.data
+					}
+				}).catch(err=>{})
+			},
 			changeUserType(){
 				let token = this.$route.query['t'],
 					data = qs.stringify({ token, user_type: 'beta' })
@@ -88,14 +93,9 @@
 					'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
 				}).then(res=>{
 					if (res.data.code === 0 || res.data.code === 1002){
-						return this.axios.get('/user/info?token='+token)
+						this.getUserInfo()
 					} else {
 						return new Promise((_, reject)=> reject(res.data.code))
-					}
-				}).then(res=>{
-					if (res.data.code === 0 && res.data.data.user_type === 'beta'){
-						this.granted = true
-						this.user = res.data.data
 					}
 				}).catch(err=>{})
 			}

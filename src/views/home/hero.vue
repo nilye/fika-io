@@ -3,16 +3,16 @@
 
 		<div class="hero-container flex-center">
 			<!--google login-->
-			<button class="btn log-in" @click="login"> Login </button>
+			<!--<button class="btn log-in" @click="login"> Login </button>-->
 
-			<div class="home-main">
+			<div class="home-col">
 
-				<div class="d-block flex-x-center">
-					<fika-icon class="hero-fika-logo"></fika-icon>
-					<div class="hero-brand ml-2 d-inline">Fika</div>
+				<div class="d-block flex-align-center">
+					<fika-icon></fika-icon>
+					<fika-title height="48px" class="ml-3"></fika-title>
 				</div>
 				<div class="hero-slogan mt-4">
-					A Kindle-like reading <br> experience for Chrome
+					A delightful reading <br> experience for Chrome
 				</div>
 
 				<button class="btn pri add-to-chrome">
@@ -36,10 +36,11 @@
 
 <script>
 	import ChromeIcon from '../../assets/svg/chrome.svg'
-	import FikaIcon from '../../assets/svg/fika.svg'
+	import FikaIcon from '../../assets/svg/logo.svg'
+	import FikaTitle from '../../assets/svg/title.svg'
 	export default {
 		name: 'home-hero',
-		components:{ ChromeIcon, FikaIcon },
+		components:{ ChromeIcon, FikaIcon, FikaTitle },
 		data:()=>({
 			imgs:[
 				['shakespeare', 'wander-2', '60%', '16%'],
@@ -61,7 +62,6 @@
 				let el = this.$refs.splash,
 					h = el.offsetHeight,
 					ratio = h/1341
-				console.log(el.offsetHeight, h, el.childNodes, ratio)
 				el.childNodes.forEach(i=>{
 					if (i.classList[0] !== 'bg'){
 						i.style.transform = `scale(${ratio})`

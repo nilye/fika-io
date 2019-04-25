@@ -1,9 +1,9 @@
 <template>
-	<div class="pricing">
-		<h1>Get more from Fika</h1>
-		<div class="pricing-cont">
+	<div class="bg-sec">
+		<h1 class="color-white">Get more from Fika</h1>
+		<div class="pricing-cont home-col">
 			<!--free-->
-			<div class="pricing-tile mr-2">
+			<div class="pricing-tile bg-white mr-2">
 				<div class="title">Free</div>
 				<div class="price flex-center">
 					<div class="price-num ml-2">0</div>
@@ -13,7 +13,7 @@
 						{{i}}
 					</div>
 				</div>
-				<button class="btn pri my-2">Try now</button>
+				<a class="btn pri my-2" href="https://chrome.google.com/webstore/detail/fika-reader-mode/fbcdnjeoghampomjjaahjgjghdjdbbcj" target="_blank">Try now</a>
 			</div>
 			<!--premium-->
 			<div class="pricing-tile pricing-tile-premium">
@@ -40,13 +40,16 @@
 				free:[
 					'Basic reader mode',
 					'Auto TOC',
-					'4 Themes, 6 Fonts'
+					'Fonts',
+					'Themes'
 				],
 				premium:[
 					'Basic reader mode',
 					'Auto TOC',
-					'12 Themes, 10 Fonts',
-					'Inspiring photo background',
+					'Fonts',
+					'Themes',
+					'Color background',
+					'Photo background',
 					'Auto pilot',
 					'Send to kindle'
 				]

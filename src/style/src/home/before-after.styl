@@ -1,0 +1,47 @@
+/* comparison */
+.before-after
+  background: $theme.sec
+
+  @media $media-breakpoints[sm-and-down]
+    m(y, 0)
+
+
+  .container
+    width 100%;
+    //border: 1px solid $theme.text-d
+    br(4px)
+    overflow hidden
+    position relative
+    cursor col-resize
+    shadow(2)
+
+  .before
+    position absolute
+    height 100%
+    top: 0
+    left 0
+    overflow hidden
+    border-right: 4px solid $theme.pri
+    box-sizing border-box
+
+    img
+      display flex
+      height 100%
+
+  .after
+    display: flex
+    width: 100%
+
+
+  .selection
+    br-pill()
+    height 72px
+    width 72px
+    m(a,1)
+    object-fit cover
+    background-position: center
+    background-size: cover
+    background-repeat no-repeat
+    border: 5px solid  $theme.sec
+    &.active
+      border: 5px solid $theme.pri
