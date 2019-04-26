@@ -15,10 +15,10 @@
 					A delightful reading <br> experience for Chrome
 				</div>
 
-				<button class="btn pri add-to-chrome">
+				<a class="btn pri add-to-chrome" href="https://chrome.google.com/webstore/detail/fika-reader-mode/fbcdnjeoghampomjjaahjgjghdjdbbcj" target="_blank">
 					<chrome-icon class="chrome-icon"></chrome-icon>
-					<span style="flex:1">Add to Chrome</span>
-				</button>
+					<span class="ml-2" style="flex:1">Add to Chrome</span>
+				</a>
 			</div>
 		</div>
 

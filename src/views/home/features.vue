@@ -1,6 +1,6 @@
 <template>
 	<div class="home-col text-center">
-		<h1>Key Features</h1>
+		<h2>{{headings[activeIndex]}}</h2>
 		<div class="swiper-cont">
 			<swiper :options="swiperOption" style="border-radius: 16px" ref="swiper" @slideChange="slideChange">
 				<swiper-slide v-for="(image, index) in images" :key="index">
@@ -14,7 +14,6 @@
 				<right-icon></right-icon>
 			</button>
 		</div>
-		<h2>{{headings[activeIndex]}}</h2>
 	</div>
 </template>
 
